@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
     	DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
     	$users = [
-    				['name'=>'Dhiraj Wakchaure','email'=>'ddw147@proman.com','password'=>'demo','mobile'=>'8275466726']
+    				['name'=>'Dhiraj Wakchaure','email'=>'ddw147@gmail.com','password'=>bcrypt('demo'),'mobile'=>'8275466726']
 	   			 ];
 
 		foreach ($users as $key => $user) 
