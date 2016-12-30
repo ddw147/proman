@@ -11,7 +11,16 @@ class Project extends Model
 	protected $fillable = ['name','description','icon','header','created_by','start_date','due_date','end_date'];
 
 
-    public function user()
+	protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'start_date',
+        'due_date',
+        'end_date'
+    ];
+
+    public function owner()
     {
     	return $this->belongsTo('App\User','created_by','id');
     }
@@ -31,6 +40,11 @@ class Project extends Model
     public function comments()
     {
         return $this->morphMany('App\Comment', 'owner');
+    }
+
+    public function members()
+    {
+    	return $this->belongsToMany('App\User');
     }
     
 }

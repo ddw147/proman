@@ -28,8 +28,16 @@ class User extends Authenticatable
     ];
 
 
-    public function projects()
+    public function ownedprojects()
     {
     	return $this->hasMany('App\Project','created_by','id');
     }
+
+
+    public function projects()
+    {
+    	return $this->belongsToMany('App\Project');
+    }
+
+
 }

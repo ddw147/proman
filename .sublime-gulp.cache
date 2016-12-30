@@ -1,0 +1,1 @@
+{"F:\\Practice\\proman\\gulpfile.js":{"sha1":"442dd3fd26d2b07530c27ba02cd7811931e9413c","tasks":{"all":{"name":"all","dependencies":""},"default":{"name":"default","dependencies":"all"},"tdd":{"name":"tdd","dependencies":""},"watch":{"name":"watch","dependencies":"default"},"sass":{"name":"sass","dependencies":""},"webpack":{"name":"webpack","dependencies":""}}}}
