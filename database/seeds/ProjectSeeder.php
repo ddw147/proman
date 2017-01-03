@@ -24,17 +24,10 @@ class ProjectSeeder extends Seeder
     	DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
     	$projects = [
-    					['name'=>'Proman','description'=>'Promam \n An Asana Ripoff','created_by'=>1,'start_date'=>'2016-30-12','due_date'=>'2017-01-10']
+    					['name'=>'Proman','description'=>'Promam \n An Asana Ripoff','created_by'=>1,'start_date'=>'30/12/2016','due_date'=>'10/01/2017']
 
     				];
-
-    	$faker =  Faker\Factory::create();
-    	for ($i=1; $i <= 20 ; $i++) 
-    	{ 
-    		$projects[]= ['name'=>$faker->name,'description'=>$faker->text,'created_by'=>1,'start_date'=>$faker->date,'due_date'=>$faker->date];
-	
-    	}
-    	
+ 
 
 			$user =User::find(1) ;     				
 		foreach ($projects as $key => $project)

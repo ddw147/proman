@@ -27,8 +27,12 @@
 
 
 <section class="content">
-
- 
+ @if (session('status'))
+    <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <h4><i class="icon fa fa-info"></i>  {{ session('status') }} </h4>
+    </div>
+@endif 
 
 
 <div class="row">
@@ -37,11 +41,14 @@
       </div>  
 </div>
 
-<div class="clearfix">..</div>
+ 
+
+
+
 
     <div class="row">
-               
              
+          
         @foreach ($projects as $project)
          <div class="col-md-4">
                <div class="box box-solid box-primary">

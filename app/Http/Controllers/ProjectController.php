@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Project;
 use App\User;
-
-
+use Auth;
+use App\Http\Requests\ProjectRequest;
 
 class ProjectController extends Controller
 {
@@ -19,5 +19,27 @@ class ProjectController extends Controller
 
 		return view('project.create');
 	}
+
+	public function store(ProjectRequest $request)
+	{
+		$project =new Project();
+
+		$project->fill($request->all());
+
+		Auth::user()->ownedprojects()->save($project);
+
+		$project->members()->attach(Auth::user()->id);
+
+		return redirect('/project')->with('status','Project Successfully Added');
+	}
+
+	public function index()
+    {
+    	$projects = Auth::user()->projects()->paginate(9);
+
+    	 
+        return view('home',compact('projects'));
+    }
+
 
 }

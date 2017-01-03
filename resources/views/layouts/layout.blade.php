@@ -43,3 +43,4 @@
 @include('layouts.script')
 </body>
 </html>
+@yield('script')

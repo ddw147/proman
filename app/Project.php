@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use Carbon\Carbon;
 class Project extends Model
 {
     //
@@ -47,4 +48,17 @@ class Project extends Model
     	return $this->belongsToMany('App\User');
     }
     
+    public function setStartDateAttribute($value)
+    {
+    	return Carbon::createFromFormat('d/m/Y',$value);
+    }
+
+    public function setDueDateAttribute($value)
+    {
+    	return Carbon::createFromFormat('d/m/Y',$value);
+    }
+    public function setEndDateAttribute($value)
+    {
+    	return Carbon::createFromFormat('d/m/Y',$value);
+    }
 }
