@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+use Carbon\Carbon;
 class User extends Authenticatable
 {
     use Notifiable;
@@ -39,5 +40,10 @@ class User extends Authenticatable
     	return $this->belongsToMany('App\Project');
     }
 
+
+    public function member_since()
+    {
+    	 return $this->created_at->diffForHumans(Carbon::now(),true);
+    }
 
 }

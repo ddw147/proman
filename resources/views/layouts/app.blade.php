@@ -19,6 +19,9 @@
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
+
+    @yield('meta')
+
 </head>
 <body>
     <div id="app">
@@ -85,3 +88,4 @@
     <script src="/js/app.js"></script>
 </body>
 </html>
+@yield('script')

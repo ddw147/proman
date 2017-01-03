@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('meta')
+	
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap-datepicker.standalone.min.css">
+
+@endsection
 
 @section('content')
 
@@ -15,16 +20,7 @@
 
                       		{{Form::open(['url'=>'project','class'=>'form-horizontal'])}}
 
-                      			<div class="form-group">
-								     
-								    {{Form::label('name', 'Project Name',['class'=>'col-sm-2 control-label']) }}
-								    
-								    <div class="col-sm-10">
-								       
-								      {{Form::text('name', null , ['class'=>'form-control' ],'Name ')}}
-								    </div>
-								  
-								  </div>
+                      			@include('project.form');
 
                             {{Form::close()}}       
                       </div>
@@ -36,3 +32,15 @@
 
 
 @endsection
+
+
+@section('script')
+	
+	<script type="text/javascript" src="/js/bootstrap-datepicker.min.js"></script>	
+	<script type="text/javascript">
+		$("#start_date").datepicker({
+										autoclose:true,
+										format:'dd/mm/yyyy'
+									});
+	</script>
+@endsection 
