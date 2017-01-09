@@ -10,3 +10,16 @@
 <script src="/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="/js/demo.js"></script>
+
+<script type="text/javascript" src="/js/bootstrap-datepicker.min.js"></script>	
+
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+				
+		$(".datepicker").datepicker({
+										autoclose:true,
+										format:'dd/mm/yyyy'
+									});
+		})
+	</script>

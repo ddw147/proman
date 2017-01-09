@@ -24,7 +24,7 @@ class ProjectSeeder extends Seeder
     	DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
     	$projects = [
-    					['name'=>'Proman','description'=>'Promam \n An Asana Ripoff','created_by'=>1,'start_date'=>'30/12/2016','due_date'=>'10/01/2017']
+    					['name'=>'Proman','description'=>'Promam \n An Asana Ripoff','created_by'=>1,'start_date'=>'30/12/2016','due_date'=>'01/01/2017']
 
     				];
  
